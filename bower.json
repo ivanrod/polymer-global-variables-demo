@@ -1,7 +1,8 @@
 {
-  "name": "polymer-starter-kit",
+  "name": "polymer-global-variables-demo",
   "authors": [
-    "The Polymer Authors"
+    "The Polymer Authors",
+    "Iván Rodríguez <frivanrodriguez@gmail.com>"
   ],
   "private": true,
   "dependencies": {
