@@ -1,0 +1,85 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-language">
+  <template>
+    <select on-change="changeLanguage">
+      <template is="dom-repeat" items="[[languages]]" as="language">
+        <option value="[[language]]">[[language]]</option>
+      </template>
+    </select>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-language',
+
+      properties: {
+        languages: {
+          type: Array,
+          value: ['english', 'spanish', 'galician']
+        },
+
+        locales: {
+          type: Object,
+          value: {
+
+            english: {
+              header: {
+                title: "My App",
+                menu: "Menu"
+              },
+              view1: {
+                title: "View One",
+                description: "Ut labores minimum atomorum pro. Laudem tibique ut has.",
+                extended: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, reprehenderit illum molestiae similique, ad, quo ab voluptatibus labore eligendi enim rem quasi, corporis assumenda doloremque et. Incidunt nostrum obcaecati recusandae!"
+              },
+              view2: {
+                title: "View Two",
+                description: "Ea duis bonorum nec, falli paulo aliquid ei eum.",
+                extended: "Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea."
+              },
+              view3: {
+                title: "View Three",
+                description: "Modus commodo minimum eum te, vero utinam assueverit per eu.",
+                extended: "Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur."
+              }
+            },
+
+            spanish: {
+              header: {
+                title: "Mi Aplicación",
+                menu: "Menú"
+              },
+              view1: {
+                title: "Vista Uno",
+                description: "Hasta luego Lucas benemeritaar te va a hasé pupitaa va usté muy cargadoo a peich está la cosa muy malar no te digo trigo por no llamarte Rodrigor no puedor ese pedazo de hasta luego Lucas apetecan.",
+                extended: "Lorem fistrum hasta luego Lucas pecador pupita benemeritaar pupita se calle ustée pecador torpedo está la cosa muy malar. Se calle ustée a wan te voy a borrar el cerito papaar papaar. Ese pedazo de jarl ahorarr condemor no te digo trigo por no llamarte Rodrigor pecador no puedor. Te va a hasé pupitaa no puedor de la pradera qué dise usteer diodenoo la caidita a wan ese hombree hasta luego Lucas fistro caballo blanco caballo negroorl. Benemeritaar pupita condemor apetecan apetecan condemor va usté muy cargadoo por la gloria de mi madre. Ahorarr se calle ustée fistro amatomaa me cago en tus muelas a peich llevame al sircoo hasta luego Lucas fistro ese hombree de la pradera. Ese que llega a peich jarl qué dise usteer papaar papaar a wan llevame al sircoo. Ese pedazo de quietooor pecador no puedor ese hombree la caidita jarl a peich diodenoo. Quietooor pecador mamaar te voy a borrar el cerito ahorarr fistro."
+              },
+              view2: {
+                title: "Vista Dos",
+                description: "Ahorarr fistro por la gloria de mi madre apetecan.",
+                extended: "Lorem fistrum me cago en tus muelas a gramenawer te voy a borrar el cerito qué dise usteer te va a hasé pupitaa ese que llega. A peich ese hombree ese que llega benemeritaar jarl. A gramenawer diodenoo papaar papaar condemor pecador. Tiene musho peligro mamaar hasta luego Lucas al ataquerl amatomaa papaar papaar quietooor por la gloria de mi madre por la gloria de mi madre. Amatomaa ese pedazo de caballo blanco caballo negroorl apetecan qué dise usteer no puedor llevame al sircoo ese hombree. Apetecan fistro jarl no puedor mamaar qué dise usteer a gramenawer de la pradera está la cosa muy malar torpedo."
+              },
+              view3: {
+                title: "Vista Tres",
+                description: "A peich sexuarl ese pedazo de se calle ustée no te digo trigo por no llamarte Rodrigor sexuarl.",
+                extended: "Lorem fistrum a gramenawer de la pradera de la pradera pupita ese que llega ese que llega. Ahorarr a gramenawer se calle ustée por la gloria de mi madre benemeritaar ahorarr va usté muy cargadoo. Quietooor va usté muy cargadoo a peich fistro al ataquerl me cago en tus muelas está la cosa muy malar ese hombree diodeno. Por la gloria de mi madre no puedor jarl al ataquerl no puedor."
+              }
+            }
+
+          }
+        }
+      },
+
+      ready: function() {
+        Polymer.globalsManager.set('locales', this.locales.english);
+      },
+
+      changeLanguage: function(event) {
+        var language = event.target.value;
+        Polymer.globalsManager.set('locales', this.locales[language]);
+      }
+    });
+  </script>
+</dom-module>
