@@ -4,6 +4,8 @@ This is a demo of Polymer Global Variables hack, based on Polymer Starter Kit.
 
 You can see the result [here](https://polymer-global-variables-a8281.firebaseapp.com).
 
+![DEMO GIF](/demo.gif "DEMO")
+
 The localization is implemented using Polymer Global Variables API. `my-language` component changes the locales object using `Polymer.globalsManager`.
 
 *my-language.html*
