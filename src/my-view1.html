@@ -1,0 +1,21 @@
+<html><head><meta charset="UTF-8"><link rel="import" href="my-app.html"></head><body><dom-module id="my-view1">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+    <div class="card">
+      <div class="circle">1</div>
+      <h1>[[globals.locales.view1.title]]</h1>
+      <p>[[globals.locales.view1.description]]</p>
+      <p>[[globals.locales.view1.extended]]</p>
+    </div>
+  </template>
+
+  <script>Polymer({is:"my-view1"});</script>
+</dom-module>
+</body></html>
