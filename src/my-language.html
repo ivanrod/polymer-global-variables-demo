@@ -17,7 +17,7 @@
       properties: {
         languages: {
           type: Array,
-          value: ['english', 'spanish', 'galician']
+          value: ['english', 'spanish']
         },
 
         locales: {
@@ -73,11 +73,13 @@
       },
 
       ready: function() {
+        // Load english locales by default
         Polymer.globalsManager.set('locales', this.locales.english);
       },
 
       changeLanguage: function(event) {
         var language = event.target.value;
+        // Load selected locales
         Polymer.globalsManager.set('locales', this.locales[language]);
       }
     });
